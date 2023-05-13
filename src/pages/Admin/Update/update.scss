@@ -1,0 +1,806 @@
+@import "../../../styles/variable.scss";
+
+h2.mainTitle {
+  font-size: 1.625rem;
+  line-height: 31px;
+  color: $tertiary-dark-color;
+  font-weight: 700;
+}
+.upload_steps_wrapper {
+  margin-top: 30px;
+}
+.upload_steps {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin: 0 10px;
+    text-align: center;
+    width: 150px;
+
+    h6 {
+      margin-top: 8px;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #5a626b;
+    }
+
+    .steps_icon_box {
+      width: 72px;
+      height: 72px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      position: relative;
+      border: 1.5px solid #e4e6e9;
+      z-index: 3;
+      color: #5a626b;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 6px;
+        background: #e4e6e9;
+        left: 102%;
+        width: 100px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 6px;
+        left: 102%;
+        width: 0;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &:last-child {
+      .steps_icon_box {
+        &:before {
+          display: none;
+        }
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .active_step {
+    .steps_icon_box {
+      border-color: $primary-color;
+      background-color: $primary-color;
+      color: #fff;
+
+      &:before {
+        width: 100px !important;
+        background-color: $primary-color;
+        z-index: 2;
+      }
+    }
+    h6 {
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+
+  .fill_active_step {
+    .steps_icon_box {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+//Upload File Css
+ul.uploaded_files {
+  list-style-type: none;
+}
+.customCard {
+  padding: 30px 40px;
+  background-color: $bg-white;
+  border-radius: 20px;
+  border: 1px solid #e4e6e9;
+  min-height: 400px;
+  margin-top: 40px;
+}
+
+span.tooltip_icon {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #dadada;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 25px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: #f2f2f2;
+  color: $tertiary-dark-color;
+}
+
+.drop_zone {
+  border: 1.5px dashed $primary-color;
+  padding: 90px 40px;
+  min-height: 300px;
+  border-radius: 6px;
+  background-color: #f2f8fb;
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 12px 0 16px 0;
+    span {
+      color: $primary-color;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: $tertiary-dark-color;
+    margin: 40px 0 15px 0;
+  }
+}
+span.uploadicon {
+  color: $primary-color;
+}
+
+// END Upload File Css
+
+// Accessibility File
+.tip-content {
+  opacity: 1 !important;
+
+  .tooltip-inner {
+    max-width: 400px !important;
+    text-align: left;
+    padding: 20px;
+    background: #ffffff;
+    border: 1.5px solid rgba(90, 98, 107, 0.25);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    color: $tertiary-dark-color;
+
+    h4 {
+      color: $primary-color;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    p {
+      line-height: 28px;
+      font-size: 1rem;
+    }
+  }
+
+  .tooltip-arrow {
+    &:before {
+      border: 1px solid rgba(90, 98, 107, 0.25) !important;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      transform: rotate(45deg);
+      left: 0px;
+      border-right: 0 !important;
+      border-top: 0 !important;
+    }
+  }
+}
+
+.paymentMethods {
+  img {
+    width: 242px;
+  }
+}
+
+.acc_note {
+  h4 {
+    font-weight: 700;
+    color: $tertiary-dark-color;
+  }
+  p {
+    color: $tertiary-gray-color;
+    font-size: 1.125rem;
+    line-height: 26px;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+}
+.customCard .form-buttons {
+  padding-top: 40px !important;
+}
+
+.walletCard-Wrapper {
+  padding: 30px;
+  background-color: #e4e6e9;
+  border-radius: 10px;
+  span.wcardIcon {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.25);
+  }
+  .wcardPrice {
+    padding-left: 15px;
+    h4 {
+      margin-bottom: 0;
+      font-weight: 700;
+      font-size: 1.625rem;
+      color: $tertiary-dark-color;
+    }
+    p {
+      margin: 0;
+      color: $tertiary-gray-color;
+      font-size: 0.875rem;
+    }
+  }
+
+  .walletCard-2 {
+    border-left: 1px solid #cdcdcd;
+  }
+
+  .amount-success {
+    .wcardPrice {
+      h4 {
+        color: $status-success-color;
+      }
+    }
+  }
+
+  .amount-error {
+    .wcardPrice {
+      h4 {
+        color: $error-msg-color;
+      }
+    }
+  }
+}
+
+// Order Successful
+.customCard {
+  min-height: calc(100vh - 350px);
+}
+.orderBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(100vh - 350px);
+
+  h3 {
+    font-weight: 700;
+    color: $tertiary-dark-color;
+    font-size: 1.625rem;
+    margin: 30px 0 0 0;
+  }
+  span {
+    font-weight: 500;
+    color: $primary-color;
+    font-size: 1.25rem;
+  }
+  p {
+    margin-top: 30px;
+    color: $tertiary-gray-color;
+    font-size: 1.125rem;
+    margin-bottom: 30px;
+  }
+}
+
+.upload-menus {
+  list-style-type: none;
+  li {
+    .upload-buttons {
+      border: 1px solid #e4e6e9;
+      background-color: #fff;
+      min-width: 135px;
+      padding: 12px 35px;
+      min-height: 50px;
+      margin: 0 8px 0 0;
+      border-radius: 10px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+button.trashicon {
+  width: 36px;
+  height: 36px;
+  color: #d90000;
+  border-radius: 6px;
+  line-height: 36px;
+  padding: 0;
+  text-align: center;
+  background: rgba(217, 0, 0, 0.1);
+  border: 1px solid rgba(217, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.border-table .my-custom-div {
+  border: 1px solid #e4e6e9;
+  border-radius: 10px;
+}
+.border-table .table_header_data {
+  margin-top: 0 !important;
+}
+.border-table tr:last-child td,
+.border-table tr:last-child th {
+  border: 0;
+}
+
+.border-table .customTable {
+  margin-bottom: 0;
+}
+.confirm_File_Block .pagination-inner-wrapper {
+  display: none;
+}
+
+// MODAL CSS
+
+.trash-Modal {
+  .modal-dialog {
+    max-width: 600px;
+    .modal-content {
+      border-radius: 0;
+
+      .modal-header {
+        padding: 20px 40px;
+        border-color: #c4c4c4;
+        h2 {
+          font-size: 1.625rem;
+          margin: 0;
+          font-weight: 700;
+          color: $tertiary-dark-color;
+          .trashicon {
+            width: 60px;
+            height: 60px;
+            svg {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 40px;
+        background-color: #f7fafc;
+
+        .inputRow {
+          label {
+            color: #141b38;
+            font-size: 1.225rem;
+            line-height: 26px;
+          }
+
+          .form-control {
+            background-color: #fff;
+            border-radius: 5px;
+            border: 0.5px solid #141b38;
+          }
+        }
+
+        .modalButtons {
+          .btn {
+            width: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// END MODAL CSS
+
+// orderInfo_File_Block
+
+.orderInfo_File_Block {
+  padding: 0;
+
+  .mainTitle {
+    padding: 30px 40px;
+    margin-bottom: 0;
+  }
+
+  .table_data {
+    padding-top: 0 !important;
+
+    .pagination-inner-wrapper {
+      padding: 0;
+    }
+  }
+
+  .table_header_data {
+    margin-top: 0 !important;
+  }
+
+  .orderInfoFooter {
+    padding: 40px;
+  }
+}
+
+.form-area-2 .inputRow {
+  margin-bottom: 10px;
+}
+
+// RESPONSIVE CSS
+
+@media screen and (max-width: 1366px) {
+  .upload_steps {
+    flex-wrap: wrap;
+    li {
+      width: 91px;
+
+      .steps_icon_box {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+  .WalletPay span.error-msg {
+    line-height: 20px;
+  }
+
+  .walletCard-Wrapper {
+    span.wcardIcon {
+      width: 54px;
+      height: 54px;
+    }
+
+    .wcardPrice {
+      h4 {
+        font-size: 1.375rem;
+      }
+      p {
+        font-size: 0.75rem;
+        line-height: 14px;
+      }
+    }
+
+    .walletCard-2 {
+      padding-left: 20px !important;
+      margin-left: 20px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .walletCard-Wrapper {
+    .walletCard {
+      flex-direction: column;
+      align-items: start !important;
+      .wcardPrice {
+        padding-left: 0;
+        margin-top: 10px;
+      }
+    }
+    .walletCard-2 {
+      padding-left: 40px !important;
+      margin-left: 40px !important;
+    }
+  }
+
+  .orderSuccessful {
+    .success-icon {
+      svg {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    h3 {
+      font-size: 1.625rem;
+      margin-top: 10px;
+    }
+    span {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      margin: 15px 0;
+    }
+  }
+
+  .upload_steps {
+    li {
+      h6 {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  h2.mainTitle {
+    font-size: 1.375rem;
+  }
+
+  .customCard {
+    .inputRow {
+      label {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .total-discount-table {
+
+    .discountTable {
+      th,
+      td {
+        font-size: 0.875rem !important;
+      }
+    }
+  }
+  .acc_note {
+    p{
+      font-size: 1rem;
+    }
+    h4{
+       font-size: 1.125rem;
+    }
+    
+  }
+  
+  .form-control{
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .upload_steps {
+    flex-direction: row;
+    li {
+      width: 24%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .walletCard-Wrapper {
+    .walletCardinner {
+      align-items: center !important;
+      justify-content: center !important;
+      .walletCard {
+        align-items: center;
+      }
+    }
+    .btn {
+      // margin: 30px  auto auto auto;
+      margin-top: 30px;
+      margin-left: 0 !important;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .customCard {
+    padding: 20px;
+  }
+  .orderInfo_File_Block .mainTitle,
+  .orderInfo_File_Block .orderInfoFooter {
+    padding: 20px;
+  }
+  .couponcode-block {
+    padding: 24px 20px 0 20px !important;
+  }
+  .customCard.orderInfo_File_Block {
+    padding: 0;
+  }
+  .orderInfo_File_Block .customTable {
+    margin: 0;
+  }
+  .customCard .form-buttons {
+    padding-top: 20px !important;
+  }
+  figure.success-icon svg {
+    width: 65px;
+    height: 65px;
+  }
+  .orderBlock h3 {
+    margin-top: 10px;
+  }
+  .orderBlock p {
+    margin: 15px auto;
+  }
+
+  .walletCard-Wrapper {
+    .walletCard {
+      flex-direction: row;
+      align-items: center !important;
+      .wcardPrice {
+        margin-top: 0 !important;
+        padding-left: 15px !important;
+      }
+    }
+
+    .walletCard-2 {
+      margin-left: 20px !important;
+      padding-left: 20px !important;
+    }
+  }
+
+  .upload_steps li {
+    margin-bottom: 15px;
+    .steps_icon_box {
+      width: 50px;
+      height: 50px;
+      svg {
+        width: 20px;
+      }
+
+      &:after {
+        height: 2px;
+      }
+      &:before {
+        height: 2px;
+      }
+    }
+    h6 {
+      font-size: 0.875rem;
+      min-height: 33px;
+    }
+  }
+
+  h2.mainTitle {
+    font-size: 1.25rem;
+  }
+  .acc_note h4 {
+    font-size: 1rem !important;
+  }
+  .error-msg,
+  p {
+    font-size: 0.875rem !important;
+    line-height: 18px !important;
+  }
+  .paymentMethods {
+    margin-bottom: 20px;
+  }
+  .customCheckbox label {
+    font-size: 0.875rem;
+    line-height: 26px;
+  }
+  .inputRow {
+    margin-bottom: 10px;
+    label {
+      font-size: 0.875rem;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .orderBlock {
+    padding: 60px;
+  }
+
+  .orderSuccessful {
+    h3 {
+      font-size: 1.25rem;
+    }
+    span {
+      font-size: 0.875rem;
+    }
+  }
+
+  .orderInfo_File_Block {
+    .dataTables_wrapper {
+      padding-bottom: 0;
+    }
+    .coupon-input .apply-btn {
+      min-height: 55px;
+    }
+  }
+
+  .total-discount-table {
+    margin: 20px 0;
+
+    .discountTable {
+      th,
+      td {
+        font-size: 0.875rem !important;
+      }
+    }
+  }
+
+
+  .accessibility_File_Block{
+    .inputRow {
+      .customCheckbox{
+        min-height: 24px;
+        margin-top: 15px;
+        label{
+          line-height: 16px;
+          min-height: 28px;
+          align-items: center;
+          display: flex;
+        }
+      }
+    }
+      
+  }
+
+  .form-area-2 .customCheckbox {
+    margin: 0 !important;
+}
+.tip-content .tooltip-inner{
+  max-width: 250px !important;
+}
+}
+
+@media screen and (max-width: 576px) {
+  .upload-menus {
+    // flex-direction: column;
+    li {
+      margin-bottom: 10px;
+      .upload-buttons {
+        min-width: 60px;
+        padding: 10px;
+        border-radius: 50%;
+        height: 60px;
+
+        svg {
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  .coupon-input {
+    flex-wrap: wrap;
+  }
+  .coupon-input .apply-btn {
+    min-height: 60px;
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
+  .coupon-input .inputRow {
+    width: 100%;
+  }
+
+  .walletCard-Wrapper {
+    .walletCardinner {
+      flex-direction: column;
+
+      .walletCard {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+        .wcardPrice {
+          margin-top: 15px !important;
+          padding-left: 0 !important;
+        }
+      }
+
+      .walletCard-2 {
+        border: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 20px !important;
+      }
+    }
+  }
+
+  .radioButtonGroup {
+    flex-direction: column;
+  }
+  .customCheckbox.radioButton.ms-4 {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+  .customCard .form-buttons .btn {
+    width: 48%;
+  }
+}
